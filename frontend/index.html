@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talktopit</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="logo">Talktopit</div>
+      <div class="top-icons">
+        <button id="searchIconBtn" class="icon-btn" title="Search">🔍</button>
+        <button id="collapseBtn" class="icon-btn" title="Collapse sidebar">▤</button>
+      </div>
+    </div>
+
+    <button id="newChatBtn" class="new-chat-btn">
+      <span>✎</span> New chat
+    </button>
+
+    <div class="search-box hidden" id="searchBox">
+      <input id="searchInput" type="text" placeholder="Search chats" />
+    </div>
+
+    <!-- Decorative-only nav items, like the real ChatGPT sidebar (not functional yet) -->
+    <nav class="static-nav">
+      <div class="nav-item">🖼️ Images</div>
+      <div class="nav-item">📚 Library</div>
+      <div class="nav-item">🧩 Plugins</div>
+    </nav>
+
+    <div class="chat-history" id="chatHistory">
+      <div class="history-label">Recents</div>
+    </div>
+
+    <div class="sidebar-bottom">
+      <button id="founderBtn" class="founder-link">👤 Founder — K Naveen Kumar</button>
+      <div class="user-chip" id="userChip">
+        <div class="avatar" id="userAvatar">U</div>
+        <span id="userEmailLabel"></span>
+        <button id="logoutBtn" class="logout-btn">Log out</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CHAT AREA -->
+  <main class="chat-area">
+    <div class="chat-topbar">
+      <button id="expandBtn" class="icon-btn hidden" title="Expand sidebar">▤</button>
+      <div class="model-pill">Talktopit</div>
+      <div class="topbar-spacer"></div>
+      <select id="langSelect" class="lang-select">
+        <option value="">Auto language</option>
+        <option value="English">English</option>
+        <option value="Tamil">Tamil</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Telugu">Telugu</option>
+        <option value="Spanish">Spanish</option>
+        <option value="French">French</option>
+        <option value="Arabic">Arabic</option>
+        <option value="Chinese">Chinese</option>
+      </select>
+      <button id="exportPdfBtn" class="export-btn">📄 PDF</button>
+      <button id="exportDocBtn" class="export-btn">📝 Word</button>
+    </div>
+
+    <div id="chatWindow" class="chat-window">
+      <div class="welcome-screen" id="welcomeScreen">
+        <h1>Ready when you are.</h1>
+        <p class="welcome-sub">Ask a question, say "draw a..." for images, or "...give me a pdf" for a document.</p>
+      </div>
+    </div>
+
+    <form id="chatForm" class="chat-input-form">
+      <button type="button" id="imageModeBtn" class="plus-btn" title="Force image mode">🖼️</button>
+      <input id="userInput" type="text" placeholder="Ask anything" autocomplete="off" required />
+      <button type="submit" id="sendBtn">➤</button>
+    </form>
+    <div class="disclaimer">Talktopit can make mistakes. Check important info.</div>
+  </main>
+</div>
+
+<!-- FOUNDER MODAL -->
+<div id="founderModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" data-close="founderModal">&times;</span>
+    <img src="/assets/founder.jpg" alt="Founder" class="founder-photo">
+    <h2>K Naveen Kumar</h2>
+    <!-- EDIT THIS PARAGRAPH WITH YOUR OWN BIO -->
+    <p>
+      K Naveen Kumar is the founder and creator of Talktopit, an AI chat
+      assistant built to make conversational AI simple and accessible.
+      Write your story, background, and mission here.
+    </p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/index.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<script src="/static/script.js"></script>
+</body>
+</html>

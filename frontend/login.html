@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talktopit — Sign in</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-page">
+  <div class="auth-hero">
+    <h1>Talktopit</h1>
+    <p>Your AI assistant. Ready when you are.</p>
+  </div>
+
+  <div class="auth-card">
+    <div class="auth-tabs">
+      <button id="tabSignIn" class="tab active">Sign in</button>
+      <button id="tabSignUp" class="tab">Sign up</button>
+    </div>
+
+    <form id="signInFormPage" class="auth-form">
+      <input type="email" id="siEmail" placeholder="Email address" required />
+      <input type="password" id="siPassword" placeholder="Password" required />
+      <button type="submit" class="auth-submit">Sign in</button>
+    </form>
+
+    <form id="signUpFormPage" class="auth-form hidden">
+      <input type="text" id="suName" placeholder="Full name" required />
+      <input type="email" id="suEmail" placeholder="Email address" required />
+      <input type="password" id="suPassword" placeholder="Password (min 6 characters)" minlength="6" required />
+      <button type="submit" class="auth-submit">Create account</button>
+    </form>
+
+    <p class="auth-note">Demo login — your info is stored only in this browser.</p>
+  </div>
+
+  <button id="founderLinkPage" class="founder-link-page">👤 Meet the Founder — K Naveen Kumar</button>
+</div>
+
+<!-- FOUNDER MODAL -->
+<div id="founderModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" data-close="founderModal">&times;</span>
+    <img src="/assets/founder.jpg" alt="Founder" class="founder-photo">
+    <h2>K Naveen Kumar</h2>
+    <!-- EDIT THIS PARAGRAPH WITH YOUR OWN BIO -->
+    <p>
+      K Naveen Kumar is the founder and creator of Talktopit, an AI chat
+      assistant built to make conversational AI simple and accessible.
+      Write your story, background, and mission here.
+    </p>
+  </div>
+</div>
+
+<script src="/static/login.js"></script>
+</body>
+</html>
